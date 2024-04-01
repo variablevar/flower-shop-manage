@@ -2,15 +2,14 @@ import mongoose, { Document, Schema } from 'mongoose';
 
 // Define a nested schema for the 'street' field
 interface Street {
-  name: string;
-  number: number;
+  line1: string;
+  line2: number;
 }
 
 // Define the interface for the UserAddress document
 export interface UserAddressDocument extends Document {
-  id?: mongoose.Types.ObjectId;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   country: string;
   street: Street;
   state: string;
@@ -22,13 +21,12 @@ export interface UserAddressDocument extends Document {
 
 // Define the Mongoose schema for UserAddress
 const userAddressSchema = new Schema<UserAddressDocument>({
-  _id: { type: Schema.Types.ObjectId },
-  first_name: { type: String, required: true },
-  last_name: { type: String, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
   country: { type: String, required: true },
   street: {
-    name: { type: String, required: true },
-    number: { type: Number, required: true },
+    line1: { type: String, required: true },
+    line2: { type: String, required: true },
   },
   state: { type: String, required: true },
   town: { type: String, required: true },
