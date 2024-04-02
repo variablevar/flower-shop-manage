@@ -2,6 +2,7 @@ import { AdminJSOptions } from 'adminjs';
 
 import UserAddress from '../models/address.js';
 import Blog from '../models/blog.js';
+import { OrderModel } from '../models/order.js';
 import Product from '../models/product.js';
 import User from '../models/user.js';
 
@@ -45,6 +46,15 @@ const options: AdminJSOptions = {
         navigation: {
           name: 'Products',
           icon: 'Gift',
+        },
+      },
+    },
+    {
+      resource: OrderModel,
+      options: {
+        navigation: {
+          name: 'Orders',
+          icon: 'Box',
         },
       },
     },
